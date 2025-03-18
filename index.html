@@ -18,10 +18,9 @@
             position: relative;
             padding: 20px;
         }
-        .download-btn {
+        .download-btn, .support-btn {
             position: absolute;
             top: 20px;
-            right: 20px;
             padding: 10px 20px;
             background-color: #ff5722;
             color: white;
@@ -30,7 +29,13 @@
             text-decoration: none;
             border-radius: 5px;
         }
-        .download-btn:hover {
+        .download-btn {
+            right: 20px;
+        }
+        .support-btn {
+            left: 20px;
+        }
+        .download-btn:hover, .support-btn:hover {
             background-color: #e64a19;
         }
         .image-container {
@@ -86,6 +91,7 @@
     <div class="header">
         <h1>Critical Tech</h1>
         <a href="https://direct-link.net/1323069/critical-raider" class="download-btn">Download</a>
+        <a href="https://discord.gg/MJkxra43wq" class="support-btn">Support</a>
     </div>
     <div class="image-container">
         <img src="Critical.png" alt="Critical Tech" id="moving-image">
