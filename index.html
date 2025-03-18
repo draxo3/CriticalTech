@@ -8,7 +8,9 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
+            background: url('sky.png') no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(10px);
             color: white;
             text-align: center;
         }
@@ -42,13 +44,16 @@
         .image-container img {
             width: 80%;
             max-width: 600px;
-            transition: transform 0.2s ease-out;
+            transition: transform 0.5s ease-out;
             position: relative;
+        }
+        .image-container:hover img {
+            transform: scale(1.1);
         }
         .info-panel {
             width: 60%;
             margin: 20px auto;
-            background-color: #2a2a2a;
+            background-color: rgba(42, 42, 42, 0.9);
             padding: 15px;
             border-radius: 10px;
             cursor: pointer;
@@ -102,14 +107,6 @@
         <p>Join us and contribute to our growing modding community.</p>
     </div>
     <script>
-        document.addEventListener("mousemove", function(event) {
-            const image = document.getElementById("moving-image");
-            const rect = image.getBoundingClientRect();
-            let x = (event.clientX - rect.left - rect.width / 2) / 20;
-            let y = (event.clientY - rect.top - rect.height / 2) / 20;
-            image.style.transform = `translate(${-x}px, ${-y}px)`;
-        });
-
         function togglePanel(panel) {
             panel.classList.toggle("open");
         }
