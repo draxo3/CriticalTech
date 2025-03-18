@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Tech</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+        }
+        .header {
+            position: relative;
+            padding: 20px;
+        }
+        .download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .download-btn:hover {
+            background-color: #e64a19;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 80%;
+            max-width: 600px;
+            transition: transform 0.5s ease-in-out;
+        }
+        .image-container img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        .info {
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .info.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Critical Tech</h1>
+        <a href="https://direct-link.net/1323069/critical-raider" class="download-btn">Download</a>
+    </div>
+    <div class="image-container">
+        <img src="Critical.png" alt="Critical Tech">
+    </div>
+    <div class="info" id="info1">
+        <h2>Console Tool</h2>
+        <p>Powerful and easy-to-use console tool for various tasks.</p>
+    </div>
+    <div class="info" id="info2">
+        <h2>Many Features and Functions</h2>
+        <p>Provides multiple functionalities for enhanced user experience.</p>
+    </div>
+    <div class="info" id="info3">
+        <h2>Free and Fast</h2>
+        <p>Completely free to use with fast performance.</p>
+    </div>
+    <div class="info" id="info4">
+        <h2>Create Mod Team</h2>
+        <p>Join us and contribute to our growing modding community.</p>
+    </div>
+    <script>
+        window.addEventListener('scroll', function() {
+            let infos = document.querySelectorAll('.info');
+            infos.forEach(info => {
+                let position = info.getBoundingClientRect().top;
+                let screenHeight = window.innerHeight;
+                if (position < screenHeight - 100) {
+                    info.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
