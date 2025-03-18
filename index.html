@@ -45,15 +45,35 @@
             transition: transform 0.2s ease-out;
             position: relative;
         }
-        .info {
-            margin-top: 50px;
-            opacity: 1;
-            transform: translateY(50px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
+        .info-panel {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-align: left;
+            position: relative;
         }
-        .info.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .info-panel h2 {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .info-panel p {
+            display: none;
+            margin-top: 10px;
+        }
+        .info-panel .arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+        .info-panel.open p {
+            display: block;
+        }
+        .info-panel.open .arrow {
+            transform: rotate(90deg);
         }
     </style>
 </head>
@@ -65,20 +85,20 @@
     <div class="image-container">
         <img src="Critical.png" alt="Critical Tech" id="moving-image">
     </div>
-    <div class="info visible" id="info1">
-        <h2>Console Tool</h2>
+    <div class="info-panel" onclick="togglePanel(this)">
+        <h2>Console Tool <span class="arrow">▶</span></h2>
         <p>Powerful and easy-to-use console tool for various tasks.</p>
     </div>
-    <div class="info visible" id="info2">
-        <h2>Many Features and Functions</h2>
+    <div class="info-panel" onclick="togglePanel(this)">
+        <h2>Many Features and Functions <span class="arrow">▶</span></h2>
         <p>Provides multiple functionalities for enhanced user experience.</p>
     </div>
-    <div class="info visible" id="info3">
-        <h2>Free and Fast</h2>
+    <div class="info-panel" onclick="togglePanel(this)">
+        <h2>Free and Fast <span class="arrow">▶</span></h2>
         <p>Completely free to use with fast performance.</p>
     </div>
-    <div class="info visible" id="info4">
-        <h2>Create Mod Team</h2>
+    <div class="info-panel" onclick="togglePanel(this)">
+        <h2>Create Mod Team <span class="arrow">▶</span></h2>
         <p>Join us and contribute to our growing modding community.</p>
     </div>
     <script>
@@ -89,6 +109,10 @@
             let y = (event.clientY - rect.top - rect.height / 2) / 20;
             image.style.transform = `translate(${-x}px, ${-y}px)`;
         });
+
+        function togglePanel(panel) {
+            panel.classList.toggle("open");
+        }
     </script>
 </body>
 </html>
